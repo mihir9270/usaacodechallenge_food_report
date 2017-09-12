@@ -1,14 +1,22 @@
-<ion-header>
-  <ion-navbar>
+<ion-header class="toolbar-background-md">
+  <ion-navbar toolbar-background-md>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateSchedule()"
+                   placeholder="Search Your food..">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-list>
+    <ion-item *ngfor='let post of posts'>
+
+    </ion-item>
+  </ion-list>
 </ion-content>
